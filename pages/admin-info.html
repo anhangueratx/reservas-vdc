@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../images/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador Informática | Anhanguera</title>
+</head>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Informática', 'Multidisciplinar'],
+        datasets: [{
+        label: 'Comparação',
+        data: [23, 22], // Valores que serão comparados
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)', // Cor da barra para "Informática"
+            'rgba(54, 162, 235, 0.2)' // Cor da barra para "Multidisciplinar"
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)', // Cor da borda da barra para "Informática"
+            'rgba(54, 162, 235, 1)' // Cor da borda da barra para "Multidisciplinar"
+        ],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+        y: {
+            beginAtZero: true
+        }
+        }
+    }
+    });
+</script>
+<body>
+    <div id="anhanguera-container">
+        <div id="nav-bar">
+            <a href="../index.html"><img id="logo-principal" src="../images/logo.png" alt=""></a>
+            <a href="../index.html"><img id="logo-mobile" src="../images/icone.png" alt=""></a>
+            <div id="nav-menu">
+                <a id="laranja" href="reserva.html">INICIO</a>
+                <a href="planilha-info.html">PLANILHA</a>
+                <a href="planilha-info-equipa.html">PLANILHA EQUI.</a>
+                <a href="calendario.html">CALENDARIO</a>
+                <a href="https://sites.google.com/view/pitagorastxf">ANHANGUERA TX</a>
+            </div>
+            <a href="../index.html" onclick="sair()"><button id="button-sair">FINALIZAR SESSÂO</button></a>
+        </div>
+        <div id="menu-admin">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</body>
+<script src="../jquery/javascript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../images/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="jquery/javascript.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Calendario | Anhanguera</title>
+</head>
+<body>
+    <div id="anhanguera-container">
+        <div id="nav-bar">
+          <a href="../index.html"><img id="logo-principal" src="../images/logo.png" alt=""></a>
+          <a href="../index.html"><img id="logo-mobile" src="../images/icone.png" alt=""></a>
+            <div id="nav-menu">
+                <a href="reserva.html">RESERVE JA!</a>
+                <a href="equipamentos.html">EQUIPAMENTOS</a>
+                <a  id="laranja"  href="calendario.html">CALENDÁRIO</a>
+                <a href="https://useanhanguera.com.br/">USE AEDU</a>
+                <a href="https://sites.google.com/view/pitagorastxf">ANHANGUERA TX</a>
+                <a href="#">SALA DE AULA</a>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                FAZER LOGIN
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="pages/login.html">Sou Administrador(a)</a></li>
+                <li><a class="dropdown-item" href="https://www.colaboraread.com.br/login/auth">Sou EAD</a></li>
+                <li><a class="dropdown-item" href="https://docenteonline.kroton.com.br/login.php">Sou Professor(a)</a></li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="wrapper">
+            <main>
+              <div class="toolbar">
+                <div class="toggle">
+                </div>
+                <div class="current-month">
+                  <img src="../images/Vector-1.svg" onclick="voltarLabs()" id="voltarLabs" alt="">
+                  <span id="labVersion">Laboratório de Informatica</span>
+                  <img src="../images/Vector.svg" onclick="mudarLabs()" id="mudarLabs" alt="">
+                </div>
+              </div>
+              <div class="calendar">
+
+                <div class="calendar__week">
+                  <div id="dia1" class="calendar__day day">1
+                    RESERVADO<br>
+                  </div>
+                  <div class="calendar__day day">2</div>
+                  <div class="calendar__day day">3</div>
+                  <div class="calendar__day day">4</div>
+                  <div class="calendar__day day">5</div>
+                  <div class="calendar__day day">6</div>
+                  <div class="calendar__day day">7</div>
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">8</div>
+                  <div class="calendar__day day">9</div>
+                  <div class="calendar__day day">10</div>
+                  <div class="calendar__day day">11</div>
+                  <div class="calendar__day day">12</div>
+                  <div class="calendar__day day">13</div>
+                  <div class="calendar__day day">14</div>        
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">15</div>
+                  <div class="calendar__day day">16</div>
+                  <div class="calendar__day day">17</div>
+                  <div class="calendar__day day">18</div>
+                  <div class="calendar__day day">19</div>
+                  <div class="calendar__day day">20</div>
+                  <div class="calendar__day day">21</div>    
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">22</div>
+                  <div class="calendar__day day">23</div>
+                  <div class="calendar__day day">24</div>
+                  <div class="calendar__day day">25</div>
+                  <div class="calendar__day day">26</div> 
+                  <div class="calendar__day day">27</div> 
+                  <div class="calendar__day day">28</div> 
+                </div>
+                <div class="calendar__week">
+                  <div class="calendar__day day">29</div>
+                  <div class="calendar__day day">30</div>
+                  <div class="calendar__day day">31</div>
+                  <div class="calendar__day day">1</div>
+                  <div class="calendar__day day">2</div>
+                  <div class="calendar__day day">3</div>
+                  <div class="calendar__day day">4</div>
+                </div>
+              </div>
+            </main>
+           
+          </div>
+
+    </div>
+</body>
+<script src="../jquery/javascript.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</html>

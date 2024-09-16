@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../images/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Laboratório | Anhanguera</title>
+</head>
+<body>
+    <div id="anhanguera-container">
+        <div id="nav-bar">
+            <a href="../index.html"><img src="../images/logo.png" alt=""></a>
+            <div id="nav-menu">
+                <a id="laranja" href="reserva.html">RESERVE JA!</a>
+                <a href="equipamentos.html">EQUIPAMENTOS</a>
+                <a href="calendario.html">CALENDÁRIO</a>
+                <a href="https://useanhanguera.com.br/">USE AEDU</a>
+                <a href="https://sites.google.com/view/pitagorastxf">ANHANGUERA TX</a>
+            </div>
+            <button id="button-login"><a href="login.html">FAZER LOGIN</a></button>
+        </div>
+
+        <section id="form-labs-multi">
+            <div id="trocar-formulario">
+                <h1 id="multi" onclick="multi()" style="background-color: #F04E23;">Multidisciplinar</h1>
+                <h2 id="info" onclick="info()" >INFORMÁTICA</h2>
+            </div>
+            <h1 id="titleLab">Laboratório Multidisciplinar</h1>
+            <h2>Responda esse formulario e irá receber em <br>
+                seu e-mail a resposta da sua reserva! (Antes de reservar seu laboratório veja a disponibilidade no calendário) </h2>
+            <form class="informatica" id="form-container" style="display: none;" action="https://api.sheetmonkey.io/form/pcbWd3G9QLJme7Eyr5g8vX" method="post">
+                <div class="inputbox">
+                  <input type="text" placeholder="Nome do Professor" id="valueInput" required="required" name="Professor">
+                  <span>Nome do Professor</span>
+                </div>
+                <div class="inputbox">
+                    <input type="text" placeholder="E-mail Corporativo" id="valueInput" required="required" name="E-Mail">
+                    <span>E-mail Corporativo</span>
+                  </div>
+                  <div class="inputbox">
+                    <input type="date" placeholder="Data" id="valueInput" required="required" name="Data">
+                    <span>Data (realização da aula).
+                  </span>
+                  </div>
+                <div class="inputbox">
+                  <input type="number" placeholder="Quantidade de Alunos" id="valueInput" required="required" name="Alunos">
+                  <span>Quantidade de Alunos</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="Software Específico" id="valueInput" required="required" name="Software">
+                  <span>Software Específico</span>
+                </div>
+                <div class="inputbox">
+                  <input id="button-box-sucess" type="submit" value="FAZER SUA RESERVA">
+                </div>
+              </form>
+
+              <form class="multidisciplinar" id="form-container" style="display: flex;" action="https://api.sheetmonkey.io/form/fa2RYyVAy3F1duP5CVZT4h" method="post">
+                <div class="inputbox">
+                  <input type="text" placeholder="Nome do Professor" id="valueInput" required="required" name="Prof">
+                  <span>Nome do Professor</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="E-mail Corporativo" id="valueInput" required="required" name="Email">
+                  <span>E-mail Corporativo</span>
+                </div>
+                <div class="inputbox">
+                  <input type="date" placeholder="Data" id="valueInput" required="required" name="Data">
+                  <span>Data (realização da aula).
+                </span>
+                </div>
+                <div class="inputbox">
+                  <input type="number" placeholder="Quantidade de Alunos" id="valueInput" required="required" name="Alunos">
+                  <span>Quantidade de Alunos</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="Selecione" id="valueInput" required="required" name="Laboratorio" list="labs">
+                  <span>Laboratório</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" id="valueInput" required="required" name="Curso" list="cursos">
+                    <span>Curso (em caso de sinergia selecione os cursos envolvidos)</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" id="valueInput" required="required" name="Turno" list="turnos">
+                    <span>Selecione o turno e horário de realização da aula.</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" id="valueInput" required="required" name="Semestre">
+                    <span>Qual período da turma(Semestre)?</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" id="valueInput" required="required" name="Disciplina">
+                    <span>Disciplina (Inserir o nome da disciplina)</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" id="valueInput" required="required" name="Tema">
+                    <span>Tema da aula:</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="file" placeholder="Insira sua Resposta" id="valueInput"  name="Anexo">
+                    <span>Anexar roteiro (Pergunta não anônima)</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" id="valueInput" required="required" name="Observação">
+                    <span>Observação:</span>
+                </div>
+                <div class="inputbox">
+                  <input id="button-box-sucess" type="submit" value="FAZER SUA RESERVA">
+                </div>
+              </form>
+            </section>
+            <section id="footer-gray">
+              <img src="../images/logo.png" alt="">
+              <h1>© Copyright 2021 Anhanguera. Todos os direitos reservados.</h1>
+            </section>
+    </div>
+    <datalist id="labs">
+      <option value="Analises Clinicas e Parasitologia e Líquidos Corporais"></option>
+      <option value="Anatomia I"></option>
+      <option value="Anatomia II"></option>
+      <option value="Auditorio"></option>
+      <option value="Biodiversidade e Biotecnologia"></option>
+      <option value="Bioquímica / Microbiologia"></option>
+      <option value="Bromatologia"></option>
+      <option value="Ciências Morfofuncionais"></option>
+      <option value="Clinica de Estética"></option>
+      <option value="Clinica de Farmacia"></option>
+      <option value="Clinica de Nutrição"></option>
+      <option value="Clinica de Odontologia"></option>
+      <option value="Clinica de Piscologia"></option>
+      <option value="Construção Civil"></option>
+      <option value="Cozinha Pedagógica / Tecnologia de alimentos"></option>
+      <option value="Desenho Técnico I"></option>
+      <option value="Desenho Técnico II"></option>
+      <option value="Elétrica e Eletrônica"></option>
+      <option value="Enfremagem"></option>
+      <option value="Estética Facial e Corporal"></option>
+      <option value="Física e Resistencia de Materiais I"></option>
+      <option value="Física e Resistencia de Materiais II"></option>
+      <option value="Fisioterapia I"></option>
+      <option value="Fisioterapia  II"></option>
+      <option value="Hardware e Telecomunicações"></option>
+      <option value="Hidráulica"></option>
+      <option value="Imagem Pessoal"></option>
+      <option value="Maquetaria"></option>
+      <option value="Microscopia I"></option>
+      <option value="Microscopia II"></option>
+      <option value="Motores e Tecnologia de Soldagem"></option>
+      <option value="NPJ"></option>
+      <option value="Pista de Atletismo"></option>
+      <option value="Pré-clínico de Odontologia"></option>
+      <option value="Processos Químicos"></option>
+      <option value="Quadra Poliesportiva"></option>
+      <option value="Química I"></option>
+      <option value="Química I"></option>
+      <option value="Química III"></option>
+      <option value="Sala de Dança"></option>
+      <option value="Sementes"></option>
+      <option value="Sistemas Térmicos"></option>
+      <option value="Solos e Topografia"></option>
+      <option value="Tecnologia Farmacêutica / Cosmetologia"></option>
+      <option value="Viveiro"></option>
+    </datalist>
+
+    <datalist id="cursos">
+      <option value="Administração - N"></option>
+      <option value="Agronomia - N"></option>
+      <option value="Arquitetura e Urbanismo - N"></option>
+      <option value="Ciência da Computação - N"></option>
+      <option value="CST em Estética e Cosmética - N"></option>
+      <option value="Direito - M"></option>
+      <option value="Direito - N"></option>
+      <option value="Educação Física - Licenciatura - N"></option>
+      <option value="Enfermagem - N"></option>
+      <option value="Engenharia Civil - N"></option>
+      <option value="Engenharia de Produção - N"></option>
+      <option value="Engenharia Elétrica - N"></option>
+      <option value="Engenharia Florestal - N"></option>
+      <option value="Engenharia Mecânica - N"></option>
+      <option value="Engenharia Química - N"></option>
+      <option value="Farmácia - N"></option>
+      <option value="Fisioterapia - N"></option>
+      <option value="Nutrição - N"></option>
+      <option value="Odontologia - M"></option>
+      <option value="Odontologia - N"></option>
+      <option value="Pedagogia - Licenciatura - N"></option>
+      <option value="Psicologia - N"></option>
+    </datalist>
+
+    <datalist id="turnos">
+      <option value="Matutino / Horário 1"></option>
+      <option value="Matutino / Horário 2"></option>
+      <option value="Matutino / Integral"></option>
+
+      <option value="Noturno / Horário 1"></option>
+      <option value="Noturno / Horário 2"></option>
+      <option value="Noturno / Integral"></option>
+
+    </datalist>
+</body>
+<script src="../jquery/javascript.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</html>

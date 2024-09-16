@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../images/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style-solicitacao.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Laboratório | Anhanguera</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="jquery/javascript.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="anhanguera-container">
+    <div class="container">
+    <div id="nav-bar" style="border: none !important; width: 100% !important;"  class="nav-fixed">
+        <img id="my-hover" src="../images/logo-original.png" alt="">
+    </div>
+
+        <section id="form-labs-multi">
+          <h1 id="titleLab">Selecione um Filtro</h1>
+          <h2 id="titleLab" class="descricao">Por favor, para realizar alguma solicitação de <br> laboratório selecione um filtro abaixo: </h2>
+          <div id="trocar-formulario">
+              <h1 id="multi" onclick="multiOption()">Multidisciplinar</h1>
+              <h2 id="info" onclick="info()" >INFORMÁTICA</h2>
+          </div>
+            <form class="informatica" id="form-container" style="display: none;" action="https://api.sheetmonkey.io/form/fa2RYyVAy3F1duP5CVZT4h" method="post">
+                <div class="inputbox">
+                  <input type="text" placeholder="Nome do Professor" id="valueInput" required="required" name="Professor">
+                  <span>Nome do Professor</span>
+                </div>
+                <div class="inputboxDominio">
+                  <div class="inputContainer">
+                    <input type="text" placeholder="E-mail Institucional" id="valueInput" class="email" required="required" name="Email">
+                  </div>
+                  <span>E-mail Institucional</span>
+                </div>
+                  <div class="inputbox">
+                    <input type="date" placeholder="Data" id="valueInput" class="datalab" required="required" name="Data">
+                    <span>Data (realização da aula). <span id="descritivo"><br> Por favor, utilize o ícone do calendário para selecionar a data, evitando inserir manualmente, o que pode causar conflitos com nosso código fonte.</span>
+                  </span>
+                  </div>
+                  <div class="inputbox">
+                  <input type="text" placeholder="" id="valueInput" style="display: none" class="modalidadeinfo2" required="required" name="Modalidade">
+                  <select id="selectModalidade2">
+                    <option value="">Qual Modalidade?</option>
+                    <option value="100% Online">100% Online</option>
+                    <option value="Semi Presencial">Semi Presencial</option>
+                    <option value="Presencial">Presencial</option>
+                  </select>
+                  <span>Modalidade</span>
+                  </div>
+                <div class="inputbox">
+                  <input type="number" placeholder="Quantidade de Alunos" id="valueInput" required="required" name="Alunos">
+                  <span>Quantidade de Alunos</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="" id="valueInput" style="display: none" class="laboratorioinfo" required="required" name="Laboratório de Preferência">
+                  <select id="labsp">
+                    <option value="">Selecione uma opção</option>
+                    <option value="Laboratório de Informática 1">Laboratório de Informática 1</option>
+                    <option value="Laboratório de Informática 2">Laboratório de Informática 2</option>
+                  </select>
+                  <span>Laboratório</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="Software Específico" id="valueInput" required="required" name="Software">
+                  <span>Software Específico</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="Digita sua resposta..." id="valueInput" required="required" name="Equipamento">
+                  <span>Equipamento</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="Digite sua Observação" id="valueInput" required="required" name="Observação">
+                  <span>Observação:</span>
+                </div>
+                <div class="inputbox" style="display: none;">
+                  <input type="text" placeholder="Insira sua Resposta" class="obs" id="tokenReserva" required="required" name="Token">
+                  <span>Token de Reserva:</span>
+                </div>
+                 <div class="inputbox" style="display: none;">
+                  <input type="text" value="Não" class="obs" required="required" name="Status">
+                </div>
+                <div class="inputbox">
+                  <input id="button-box-sucess" type="submit" value="FINALIZAR SUA SOLICITAÇÂO">
+                </div>
+              </form>
+
+              <form class="multidisciplinar" id="form-container" style="display: none;" action="https://api.sheetmonkey.io/form/pcbWd3G9QLJme7Eyr5g8vX" method="post">
+                <div class="inputbox">
+                  <input type="text" placeholder="Nome do Professor" id="valueInput" class="prof" required="required" name="Prof">
+                  <span>Nome do Professor</span>
+                </div>
+                <div class="inputboxDominio">
+                  <div class="inputContainer">
+                    <input type="text" placeholder="E-mail Institucional" id="valueInput" class="email" required="required" name="Email">
+                  </div>
+                  <span>E-mail Institucional</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="" style="display: none"  id="valueInput old" class="modalidadeinfo" required="required" name="Modalidade">
+                  <select id="selectModalidade">
+                    <option value="">Qual Modalidade?</option>
+                    <option value="100% Online">100% Online</option>
+                    <option value="Semi Presencial">Semi Presencial</option>
+                    <option value="Presencial">Presencial</option>
+                  </select>
+                  <span>Modalidade</span>
+                  </div>
+                <div class="inputbox">
+                  <input type="date" placeholder="Data" id="valueInput" class="datalabMulti" required="required" name="Data">
+                  <span>Data (realização da aula). 
+                </span>
+                </div>
+
+               
+                <div class="inputbox">
+                  <input type="number" placeholder="Quantidade de Alunos"  class="aluno" id="valueInput" required="required" name="Alunos">
+                  <span>Quantidade de Alunos</span>
+                </div>
+                <div class="inputbox">
+                  <input type="text" placeholder="" id="valueInput"  style="display: none"class="laboratoriomulti" required="required" name="Laboratorio">
+                  <select id="labsMulti">
+                    <option value="">Selecione uma opção</option>
+                    <option value="Laboratório Multidisciplinar I">Laboratório Multidisciplinar I</option>
+                    <option value="Laboratório Multidisciplinar II – Morfofuncional ">Laboratório Multidisciplinar II – Morfofuncional </option>
+                    <option value="Anatomia II">Anatomia II</option>
+                    <option value="Laboratório de Enfermagem">Laboratório de Enfermagem</option>
+                    <option value="Laboratório de Fisioterapia">Laboratório de Fisioterapia</option>
+                    <option value="Laboratório de Técnica Dietética">Laboratório de Técnica Dietética</option>
+                    <option value="Laboratório de Construção Civil  e Hidraulica">Laboratório de Construção Civil  e Hidraulica</option>
+                    <option value="Motores">Motores</option>
+                    <option value="Núcleo de práticas jurídicas">Núcleo de práticas jurídicas</option>
+                  </select>
+                  <span>Laboratório</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="" id="valueInput" style="display: none" class="curso" required="required" name="Curso">
+                    <select id="selectCursos">
+                      <option value="Administração - N">Administração - N</option>
+                      <option value="Agronomia - N">Agronomia - N</option>
+                      <option value="Arquitetura e Urbanismo - N">Arquitetura e Urbanismo - N</option>
+                      <option value="Biomedicina - N">Biomedicina - N</option>
+                      <option value="Ciência da Computação - N">Ciência da Computação - N</option>
+                      <option value="CST em Estética e Cosmética - N">CST em Estética e Cosmética - N</option>
+                      <option value="Direito - M">Direito - M</option>
+                      <option value="Direito - N">Direito - N</option>
+                      <option value="Educação Física - Licenciatura - N">Educação Física - Licenciatura - N</option>
+                      <option value="Enfermagem - N">Enfermagem - N</option>
+                      <option value="Engenharia Civil - N">Engenharia Civil - N</option>
+                      <option value="Engenharia de Produção - N">Engenharia de Produção - N</option>
+                      <option value="Engenharia Elétrica - N">Engenharia Elétrica - N</option>
+                      <option value="Engenharia Florestal - N">Engenharia Florestal - N</option>
+                      <option value="Engenharia Mecânica - N">Engenharia Mecânica - N</option>
+                      <option value="Engenharia Química - N">Engenharia Química - N</option>
+                      <option value="Farmácia - N">Farmácia - N</option>
+                      <option value="Fisioterapia - N">Fisioterapia - N</option>
+                      <option value="Nutrição - N">Nutrição - N</option>
+                      <option value="Odontologia - M">Odontologia - M</option>
+                      <option value="Odontologia - N">Odontologia - N</option>
+                      <option value="Pedagogia - Licenciatura - N">Pedagogia - Licenciatura - N</option>
+                      <option value="Psicologia - N">Psicologia - N</option>
+                    </select>
+                    <span>Curso (em caso de sinergia selecione os cursos envolvidos)</span>
+                  </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="" id="valueInput" style="display: none" class="turno" required="required" name="Turno">
+                    <select id="selectTurno">
+                      <option value="">Qual Turno?</option>
+                      <option value="Matutino">Matutino</option>
+                      <option value="Vespertino">Vespertino</option>
+                      <option value="Noturno">Noturno</option>
+                    </select>
+                    <span>Selecione o turno e horário de realização da aula.</span>
+                  </div>
+                  
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" class="turma" id="valueInput" required="required" name="Semestre">
+                    <span>Qual período da turma(Semestre)?</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" class="materia" id="valueInput" required="required" name="Disciplina">
+                    <span>Disciplina (Inserir o nome da disciplina)</span>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" class="tema" id="valueInput" required="required" name="Tema">
+                    <span>Tema da aula:</span>
+                </div>
+
+                <div class="inputbox" id="uploaded">
+                  <button id="open-new-tab">FAZER UPLOAD DO ROTEIRO</button>
+                  <span>Anexar roteiro.</span>
+                </div>
+                <div class="inputbox" id="uploaded">
+                    <input type="text" placeholder="Insira seu link" class="roteiro" id="valueInput" required="required"  name="Anexo">
+                  <span>Compartilhar roteiro.</span>
+                </div>
+                <!-- <div class="inputbox">
+                    <input type="text" placeholder="Insira sua Resposta" list="equipamentos" class="obs" id="valueInput" required="required" name="Equipamento">
+                    <span>Equipamento de Informatica:</span>
+                </div> -->
+
+                 <div class="inputbox" style="display: none;">
+                  <input type="text" value="Não" class="obs" required="required" name="Status">
+                </div>
+
+                <div class="inputbox">
+                  <input type="text" placeholder="Insira sua Resposta" class="obs" id="valueInput" required="required" name="Observação">
+                  <span>Observação:</span>
+              </div>
+               <div class="inputbox" style="display: none;">
+                  <input type="text" value="Não" class="obs" required="required" name="Status">
+                </div>
+             <div class="inputbox" style="display: none">
+                  <input type="text" placeholder="Insira sua Resposta" class="obs" id="tokenReserva2" required="required" name="Token">
+                  <span>Token de Reserva:</span>
+                </div>
+                <div class="inputbox">
+                  <input id="button-box-sucess" type="submit" value="FINALIZAR SUA SOLICITAÇÂO">
+                </div>
+              </form>
+            </section>
+            
+    </div>
+            <div class="support" title="Suporte Técnico">
+                <svg width="21.22" height="25" viewBox="0 0 434 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M201.872 0.583315C145.143 8.48432 99.9276 42.8623 82.5136 91.3323C78.6956 101.958 75.9536 116.735 75.2006 130.733C74.6046 141.808 74.3176 143.214 72.3316 144.776C71.1186 145.73 69.3726 148.099 68.4516 150.039C67.1296 152.824 66.1946 153.566 64.0066 153.566C62.4816 153.566 58.9346 154.249 56.1236 155.084C28.8776 163.175 16.9036 194.953 32.1326 218.76C38.5216 228.747 48.8546 235.606 60.6386 237.682C66.4636 238.708 66.9726 239.023 69.1036 242.92C71.9936 248.203 78.6646 251.903 84.0846 251.229C89.5616 250.547 95.0526 247.506 97.5326 243.781C100.69 239.039 101.059 232.82 100.695 190.566C100.357 151.333 100.327 151.057 95.8126 146.066C94.1256 144.2 94.1026 143.596 95.4596 137.066C107.858 77.4413 155.481 38.4333 215.872 38.4373C230.743 38.4383 242.082 40.0953 255.043 44.1623C297.778 57.5713 328.777 92.3233 338.362 137.566C339.633 143.565 339.6 144.22 337.931 146.066C333.399 151.077 333.386 151.199 333.068 192.398C332.729 236.375 333.134 240.674 338.089 245.629L341.167 248.707L340.537 258.887C339.442 276.594 335.549 286.853 326.833 295.006C318.176 303.103 309.926 306.245 271.372 316.13C246.84 322.419 246.325 322.505 243.872 320.747C239.325 317.488 235.07 316.279 230.644 316.986C220.389 318.626 213.476 329.135 216.016 339.224C218.105 347.521 225.583 352.169 235.516 351.346C239.963 350.977 241.547 350.305 244.337 347.6C246.208 345.787 248.227 343.125 248.824 341.685C249.83 339.259 251.475 338.667 271.141 333.647C313.172 322.919 328.117 316.818 340.357 305.387C352.662 293.895 357.872 280.523 357.872 260.429C357.872 249.929 357.947 249.563 360.43 247.936C361.836 247.015 363.834 244.6 364.869 242.571C366.637 239.106 367.159 238.814 373.456 237.771C385.532 235.77 394.887 229.893 400.891 220.537C413.952 200.182 407.991 170.599 388.536 159.219C383.514 156.283 374.722 153.566 370.237 153.566C367.477 153.566 366.704 153.015 365.292 150.039C364.371 148.099 362.55 145.672 361.245 144.645C359.139 142.988 358.872 141.966 358.872 135.55C358.872 86.4783 326.698 35.9993 281.424 14.0403C261.537 4.39431 246.22 0.713315 223.372 0.0883151C215.122 -0.137685 205.447 0.0853151 201.872 0.583315ZM198.985 57.6313C184.653 60.1793 168.329 67.3753 155.686 76.7193C114.94 106.833 101.794 170.179 123.042 234.021C136.353 274.018 159.877 304.61 187.372 317.68C199.485 323.438 200.156 323.481 202.335 318.649C204.868 313.03 211.967 306.139 218.316 303.136C229.611 297.792 242.332 299.078 253.179 306.658C258.156 310.135 259.229 310.531 260.679 309.424C301.775 278.074 327.198 210.179 319.414 152.566C313.033 105.331 286.332 72.3953 244.372 60.0013C236.69 57.7323 233.101 57.2943 219.872 57.0083C211.347 56.8243 201.948 57.1053 198.985 57.6313ZM137.872 336.654C100.41 341.462 63.9536 361.304 40.2296 389.798C24.8566 408.261 17.7206 422 6.84661 454.066C-0.0603876 474.434 -0.263388 475.31 0.110612 483.158C0.420612 489.662 1.01661 492.138 3.14561 495.771C6.39861 501.322 11.7966 506.173 17.8206 508.96L22.3716 511.066H216.872H411.372L415.923 508.96C421.947 506.173 427.345 501.322 430.598 495.771C432.727 492.138 433.323 489.662 433.633 483.158C434.007 475.31 433.804 474.434 426.897 454.066C422.98 442.516 417.54 428.38 414.807 422.652C391.651 374.12 344.152 341.123 290.142 336.047C283.03 335.378 282.833 335.423 278.142 338.811C275.518 340.705 271.464 343.305 269.133 344.588C266.801 345.872 264.603 347.854 264.248 348.994C262.991 353.031 257.48 359.592 252.46 363.028C245.979 367.464 236.484 369.962 229.531 369.059C223.678 368.299 214.436 364.445 211.218 361.421C209.809 360.097 205.811 358.76 199.715 357.574C183.492 354.416 170.609 349.092 157.532 340.139C150.358 335.228 149.781 335.125 137.872 336.654Z" fill="white"/>
+                </svg>
+                    </div>
+</body>
+
+<script>
+  let datepickers = document.querySelector(".data");
+
+  datepickers.addEventListener("input", function() {
+    let selectedDate = new Date(datepickers.value);
+    let today = new Date();
+    if (selectedDate < today) {
+      datepickers.value = today.toISOString().split("T")[0];
+    }
+  });
+</script>
+<script>
+  let link = document.getElementById("open-new-tab");
+
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.open("https://uploadnow.io/pt?utm_source=gads&utm_medium=pt&gclid=CjwKCAiAxP2eBhBiEiwA5puhNVrJySdfeYLebcBtvOQA3A1oiM6cFCefv2Xc0oMw1YMf1YySIDqRTxoCoCkQAvD_BwE", "_blank");
+  });
+</script>
+
+<script>
+  let datepickerw = document.querySelector(".data");
+
+  // Verificar se a data selecionada está a mais de 5 dias a partir de hoje e atualizar valor se necessário
+  datepickerw.addEventListener("input", function() {
+    let today = new Date();
+    let selectedDate = new Date(datepickerw.value);
+    let diffInDays = (selectedDate - today) / (1000 * 60 * 60 * 24);
+    if (diffInDays < 7) {
+      let newDate = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate() + 7
+      );
+      datepickerw.value = newDate.toISOString().split("T")[0];
+    }
+  });
+    alert("Aviso Importante: Atualização do Sistema de Reserva\n\nPrezado(a) Usuário(a),\n\nGostaríamos de informar que, a partir do dia 22/06, o nosso sistema de reserva será desativado temporariamente para a realização de uma atualização em massa.\n\nEsta atualização é essencial para melhorar a qualidade e a eficiência dos nossos serviços. Durante este período, não será possível realizar novas reservas ou acessar reservas existentes.\n\nAgradecemos a sua compreensão e paciência enquanto trabalhamos para aprimorar o nosso sistema. Informaremos assim que o serviço estiver disponível novamente.\n\nAtenciosamente,\nLuis Eduardo - Tecnico de Informática.");
+
+</script>
+
+<script>
+  let datepickerslab = document.querySelector(".datalab");
+
+  // Verificar se a data selecionada é anterior à data atual e atualizar valor se necessário
+  datepickerslab.addEventListener("input", function() {
+    let selectedDate = new Date(datepickerslab.value);
+    let today = new Date();
+    if (selectedDate < today) {
+      datepickerslab.value = today.toISOString().split("T")[0];
+    }
+  });
+</script>
+
+
+<script>
+  let datepickerwlab = document.querySelector(".datalab");
+
+  // Verificar se a data selecionada está a mais de 5 dias a partir de hoje e atualizar valor se necessário
+  datepickerwlab.addEventListener("input", function() {
+    let today = new Date();
+    let selectedDate = new Date(datepickerwlab.value);
+    let diffInDays = (selectedDate - today) / (1000 * 60 * 60 * 24);
+    if (diffInDays < 7) {
+      let newDate = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate() + 7
+      );
+      datepickerwlab.value = newDate.toISOString().split("T")[0];
+    }
+  });
+</script>
+
+
+<script>
+  let datepickerwlab2 = document.querySelector(".datalabMulti");
+
+  // Verificar se a data selecionada está a mais de 5 dias a partir de hoje e atualizar valor se necessário
+  datepickerwlab2.addEventListener("input", function() {
+    let today = new Date();
+    let selectedDate = new Date(datepickerwlab2.value);
+    let diffInDays = (selectedDate - today) / (1000 * 60 * 60 * 24);
+    if (diffInDays < 7) {
+      let newDate = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate() + 7
+      );
+      datepickerwlab2.value = newDate.toISOString().split("T")[0];
+    }
+  });
+</script>
+
+<script src="../jquery/javascript.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</html>
+
+
+<script>
+window.onload = function() {
+  var token = generateToken();
+  console.log(token);
+  document.getElementById("tokenReserva").value = token;
+  document.getElementById("tokenReserva").readOnly = true;
+  document.getElementById("tokenReserva").addEventListener("click", function() {
+    document.getElementById("tokenReserva").select();
+    document.execCommand("copy");
+    alert("Você copiou o Token, guarde bem para você poder comprovar sua reserva!");
+  });
+  
+  // ou faça algo com o token, como enviá-lo para o servidor
+};
+
+function returnToken(){
+  var token = generateToken();
+  console.log(token);
+  document.getElementById("tokenReserva").value = token;
+  document.getElementById("tokenReserva").readOnly = true;
+  document.getElementById("tokenReserva").addEventListener("click", function() {
+    document.getElementById("tokenReserva").select();
+    document.execCommand("copy");
+    alert("Você copiou o Token, guarde bem para você poder comprovar sua reserva!");
+  });
+}
+
+
+function returnToken2(){
+  var token = generateToken();
+  console.log(token);
+  document.getElementById("tokenReserva2").value = token;
+  document.getElementById("tokenReserva2").readOnly = true;
+  document.getElementById("tokenReserva2").addEventListener("click", function() {
+    document.getElementById("tokenReserva2").select();
+    document.execCommand("copy");
+    alert("Você copiou o Token, guarde bem para você poder comprovar sua reserva!");
+  });
+}
+
+
+function generateToken() {
+  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var digits = "0123456789";
+  var token = "LABS-";
+
+  // Adicione os 6 caracteres seguintes (Z3c3ct4)
+  for (var i = 0; i < 6; i++) {
+    if (i % 2 === 0) {
+      token += chars.charAt(Math.floor(Math.random() * chars.length));
+    } else {
+      token += digits.charAt(Math.floor(Math.random() * digits.length));
+    }
+  }
+
+  return token;
+}
+
+
+function multiOption(){
+    document.querySelector('.descricao').innerHTML = "Responda esse formulario e irá receber em <br> seu e-mail a resposta da sua reserva!"
+    titleLab.innerHTML = "Laboratório DE MULTIDISCIPLINAR";
+    $('#multi').css("background-color", "#F04E23");
+    $('#multi').css("color", "#fff");
+    $('#info').css("color", "#F04E23");
+    $('#info').css("background-color", "#FFF");
+    $(".multidisciplinar").css("display", "flex");
+    $(".informatica").css("display", "none");
+    salvarTokenNoLocalStorage();
+    returnToken2();
+}
+
+function info(){
+    document.querySelector('.descricao').innerHTML = "Responda esse formulario e irá receber em <br> seu e-mail a resposta da sua reserva!"
+    titleLab.innerHTML = "Laboratório DE INFORMáTICA";
+    $('#info').css("background-color", "#F04E23");
+    $('#info').css("color", "#fff");
+    $('#multi').css("color", "#F04E23");
+    $('#multi').css("background-color", "#FFF");
+    $(".informatica").css("display", "flex");
+    $(".multidisciplinar").css("display", "none");
+    salvarTokenNoLocalStorage();
+    returnToken();
+}
+
+
+
+</script>
+
+<script>
+  const select = document.getElementById('labsp');
+  const input = document.querySelector('.laboratorioinfo');
+  
+  select.addEventListener('change', function() {
+    if (select.value !== '') {
+      input.value = select.value;
+    } else {
+      input.value = '';
+    }
+  });
+</script>
+
+<script>
+  const selectModalidade = document.getElementById('selectModalidade');
+  const inputModalidade = document.querySelector('.modalidadeinfo');
+  
+  selectModalidade.addEventListener('change', function() {
+    if (selectModalidade.value !== '') {
+      inputModalidade.value = selectModalidade.value;
+    } else {
+      inputModalidade.value = '';
+    }
+  });
+</script>
+
+<script>
+  const selectModalidade2 = document.getElementById('selectModalidade2');
+  const inputModalidade2 = document.querySelector('.modalidadeinfo2');
+  
+  selectModalidade2.addEventListener('change', function() {
+    if (selectModalidade2.value !== '') {
+      inputModalidade2.value = selectModalidade2.value;
+    } else {
+      inputModalidade2.value = '';
+    }
+  });
+</script>
+
+<script>
+  const selectMultiLab = document.getElementById('labsMulti');
+  const inputMultiLab = document.querySelector('.laboratoriomulti');
+  
+  selectMultiLab.addEventListener('change', function() {
+    if (selectMultiLab.value !== '') {
+      inputMultiLab.value = selectMultiLab.value;
+    } else {
+      inputMultiLab.value = '';
+    }
+  });
+</script>
+
+<script>
+  const selectcurso = document.getElementById('selectCursos');
+  const inputcurso = document.querySelector('.curso');
+  
+  selectcurso.addEventListener('change', function() {
+    if (selectcurso.value !== '') {
+      inputcurso.value = selectcurso.value;
+    } else {
+      inputcurso.value = '';
+    }
+  });
+</script>
+
+<script>
+  const selectturno = document.getElementById('selectTurno');
+  const inputturno = document.querySelector('.turno');
+  
+  selectturno.addEventListener('change', function() {
+    if (selectturno.value !== '') {
+      inputturno.value = selectturno.value;
+    } else {
+      inputturno.value = '';
+    }
+  });
+</script>
+
+<script>
+  document.getElementById("form-container").addEventListener("submit", function(event) {
+      const emailInput = document.getElementById("email");
+      const email = emailInput.value.trim();
+
+      if (!isValidEmailDomain(email)) {
+          event.preventDefault();
+          alert("Email não válido. Utilize um email @kroton.com.br ou @cogna.com.br");
+      }
+  });
+
+  function isValidEmailDomain(email) {
+      const validDomains = ["@kroton.com.br", "@cogna.com.br"];
+      
+      for (const domain of validDomains) {
+          if (email.endsWith(domain)) {
+              return true;
+          }
+      }
+
+      return false;
+  }
+</script>
+<script>
+// Função para salvar o token no LocalStorage
+function salvarTokenNoLocalStorage() {
+    // Obter o valor do elemento com o ID "tokenReserva"
+    const tokenReservaInput = document.getElementById("tokenReserva");
+    const tokenReserva = tokenReservaInput.value;
+
+    // Verificar se o valor não está vazio
+    if (tokenReserva.trim() !== "") {
+        // Salvar o token no LocalStorage
+        localStorage.setItem("tokenReserva", tokenReserva);
+        // alert("Seu Token foi Gerado");
+    } else {
+        // alert("Por favor, insira um token antes de salvar.");
+    }
+}
+setInterval(salvarTokenNoLocalStorage,100);
+</script>
+<style>
+.modalidadeinfo2{
+    position: absolute;
+    top: -50%;
+}
+</style>
+
+
+<script>
+var inputText = document.getElementsByName("Professor")[0];
+inputText.addEventListener("input", function() {
+    var textoDigitado = inputText.value;
+
+    if (textoDigitado.length > 0) {
+        var palavras = textoDigitado.split(' ');
+
+        var textoConvertido = palavras.map(function(palavra) {
+            if (palavra.length > 0) {
+                return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+            } else {
+                return '';
+            }
+        }).join(' ');
+        inputText.value = textoConvertido;
+    }
+});
+
+
+</script>

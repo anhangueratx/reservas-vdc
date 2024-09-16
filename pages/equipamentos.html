@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de Equipamentos | Anhanguera</title>
+  <script src="jquery/javascript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="anhanguera-container">
+    <div id="nav-bar">
+      <a href="../index.html"><img id="logo-principal" src="../images/Logotype-Branco.png" alt=""></a>
+    </div>
+
+    <section id="form-labs-multi">
+      <h1 id="titleLab">Reservar Equipamentos</h1>
+      <h2>Responda esse formulario e irá receber em <br>
+        seu e-mail a resposta da sua reserva! </h2>
+      <form class="informatica" id="form-container" action="https://api.sheetmonkey.io/form/5b9CJKsA9t3E4hHEM76CH9"
+        method="post">
+        <div class="inputbox">
+          <input type="text" placeholder="Nome do Professor" id="valueInput" required="required" name="Professor">
+          <span>Nome do Professor</span>
+        </div>
+        <div class="inputbox">
+          <input type="email" placeholder="E-mail Corporativo" id="valueInput" required="required" name="E-Mail">
+          <span>E-mail Corporativo</span>
+        </div>
+        <div class="inputbox">
+          <input type="date" placeholder="Data" id="valueInput" class="dataE" required="required" name="Data">
+          <span>Data (realização da aula).
+          </span>
+        </div>
+        <div class="inputbox">
+          <input type="text" placeholder="Informe a sala/laboratório" id="valueInput" required="required" name="Sala">
+          <span>Qual será a sala/laboratório?</span>
+        </div>
+
+        <div class="inputbox">
+          <input type="text" placeholder="Qual será o Turno?" id="valueInput" required="required" name="Turno"
+            list="turnos">
+          <span>Qual será o turno?</span>
+        </div>
+
+        <div class="inputbox">
+          <input type="text" placeholder="Qual Equipamento?" id="valueInput" required="required" name="Equipamento"
+            list="equipamentos">
+          <span>Qual Equipamento?</span>
+        </div>
+        <div class="inputbox">
+          <input type="text" placeholder="Insira sua Resposta" class="obs" id="tokenReserva" required="required"
+            name="Token">
+          <input style="display: none;" type="text" value="oi" name="Envio">
+          <span>Token de Reserva:</span>
+        </div>
+        <div class="inputboxSucess">
+          <input id="button-box-sucess" type="submit" value="FAZER SUA RESERVA">
+        </div>
+      </form>
+    </section>
+  </div>
+  <datalist id="turnos">
+    <option value="Matutino / Horário 1"></option>
+    <option value="Matutino / Horário 2"></option>
+    <option value="Matutino / Integral"></option>
+
+    <option value="Noturno / Horário 1"></option>
+    <option value="Noturno / Horário 2"></option>
+    <option value="Noturno / Integral"></option>
+
+  </datalist>
+
+  <datalist id="equipamentos">
+    <option value="Microfone"></option>
+    <option value="Microfone + Caixa de Som"></option>
+    <option value="Caixa de Som"></option>
+    <option value="Data-Show"></option>
+    <option value="Data-Show + Caixa de Som"></option>
+    <option value="Passador de Slide"></option>
+    <option value="Adaptador HDMI"></option>
+  </datalist>
+</body>
+<script src="../jquery/javascript.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+
+</html>
+
+<script>
+  function generateToken(length) {
+    var prefix = "AEDU-";
+    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    var token = prefix;
+    for (var i = 0; i < length; i++) {
+      token += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return token;
+  }
+
+  window.onload = function () {
+    var token = generateToken(10);
+    console.log(token);
+    document.getElementById("tokenReserva").value = token;
+    document.getElementById("tokenReserva").readOnly = true;
+    document.getElementById("tokenReserva").addEventListener("click", function () {
+      document.getElementById("tokenReserva").select();
+      document.execCommand("copy");
+      alert("Você copiou o Token, guarde bem para você poder comprovar sua reserva!")
+    });
+
+    // ou faça algo com o token, como enviá-lo para o servidor
+  }
+</script>
+<script>
+  let datepickerwlab2 = document.querySelector(".dataE");
+
+  // Verificar se a data selecionada está a mais de 5 dias a partir de hoje e atualizar valor se necessário
+  datepickerwlab2.addEventListener("input", function () {
+    let today = new Date();
+    let selectedDate = new Date(datepickerwlab2.value);
+    let diffInDays = (selectedDate - today) / (1000 * 60 * 60 * 24);
+    if (diffInDays < 7) {
+      let newDate = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate() + 7
+      );
+      datepickerwlab2.value = newDate.toISOString().split("T")[0];
+    }
+  });
+</script>
